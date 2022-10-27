@@ -34,7 +34,7 @@ populations = [(0, 16189), (5, 18120), (10, 30386), (15, 67595), (20, 115477), (
 l_options = make_parameter_options(350000, 355000, 100)
 k_options = make_parameter_options(0, 0.15, 0.002)
 d_options = make_parameter_options(28, 29, 0.05)
-c_options = make_parameter_options(0, 1, 1) #has no effect on the optimal logistic function
+c_options = make_parameter_options(0, 10000, 2000) #has no effect on the optimal logistic function
 
 best_fit_parameters = [] # [l,k,d,c]
 best_fit = fit_calculator(populations, l_options[0], k_options[0], d_options[0], c_options[0])
@@ -54,5 +54,5 @@ for l in l_options:
                     best_fit = fit
 
 
-print('Best fit: ' + str(best_fit))
-print('L=' + str(best_fit_parameters[0]) + ', k=' + str(best_fit_parameters[1]) + ', d=' + str(best_fit_parameters[2]) + ', c=' + str(best_fit_parameters[3]))
+print('Lowest sumation: ' + str(best_fit))
+print('L=' + str(best_fit_parameters[0]) + ', k=' + str(best_fit_parameters[1]) + ', d=' + str(round(best_fit_parameters[2], 3)) + ', c=' + str(best_fit_parameters[3]))
